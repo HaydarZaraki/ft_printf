@@ -6,7 +6,7 @@
 /*   By: helgayli <helgayli@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:00:38 by helgayli          #+#    #+#             */
-/*   Updated: 2023/08/15 01:22:16 by helgayli         ###   ########.fr       */
+/*   Updated: 2023/08/15 15:03:21 by helgayli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,23 @@ void	ft_print_hex_upper(int decimalNumber)
 
 	index = 0;
 	hex = malloc(sizeof(char) * 16);
+	if (decimalNumber == 0)
+		hex[index++] = '0';
+	if (decimalNumber < 0)
+	{
+		write(1,"-",1);
+		decimalNumber *= -1;	
+	}
 	while (decimalNumber > 0)
 	{
 		remainder = decimalNumber % 16;
 		if (remainder < 10)
-		{
 			hex[index++] = remainder + '0';
-		}
 		else
-		{
 			hex[index++] = remainder - 10 + 'A';
-		}
 		decimalNumber /= 16;
 	}
+	hex[index++] = '\0';
 	ft_putstr_fd(hex, 1);
 	free(hex);
 }
@@ -108,7 +112,7 @@ int main(void)
 {
 	long	i;
 
-	i = 68702702548;
+	i = -150000;
 	ft_print_hex_upper(i);
 	return (0);
 }
