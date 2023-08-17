@@ -2,6 +2,7 @@
 *.d
 
 printfTester
+ft_printf_tester
 
 # Object files
 *.o

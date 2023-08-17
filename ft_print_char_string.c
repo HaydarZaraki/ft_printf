@@ -6,7 +6,7 @@
 /*   By: helgayli <helgayli@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 09:35:08 by helgayli          #+#    #+#             */
-/*   Updated: 2023/08/16 14:58:25 by helgayli         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:23:45 by helgayli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	ft_putstr_fd(char *s, int fd)
 	return (len);
 }
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }

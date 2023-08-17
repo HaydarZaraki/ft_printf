@@ -6,21 +6,23 @@
 /*   By: helgayli <helgayli@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 09:33:57 by helgayli          #+#    #+#             */
-/*   Updated: 2023/08/16 14:37:39 by helgayli         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:27:08 by helgayli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd,int is_unsigned)
+int	ft_putnbr_fd(int n, int fd,int is_unsigned)
 {
 	long	num;
-
+	int 	len;
+	
+	len = 0;
 	num = n;
 	if (num < 0)
 	{
 		if (is_unsigned != 1)
-			write(fd, "-", 1);
+			len += ft_putchar_fd('-', fd);
 		num *= -1;
 	}
 	if (num > 9)
@@ -31,6 +33,7 @@ void	ft_putnbr_fd(int n, int fd,int is_unsigned)
 	else
 	{
 		num += 48;
-		write(fd, &num, 1);
+		len += ft_putchar_fd(num, fd);
 	}
+	return (len);
 }
