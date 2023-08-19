@@ -6,7 +6,7 @@
 /*   By: helgayli <helgayli@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 09:35:08 by helgayli          #+#    #+#             */
-/*   Updated: 2023/08/17 12:23:45 by helgayli         ###   ########.fr       */
+/*   Updated: 2023/08/18 11:12:39 by helgayli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	ft_putstr_fd(char *s, int fd)
 {
 	int	len;
-	
+
 	len = 0;
 	if (s == NULL)
 	{
-		write(fd, "(nil)", 5);
-		return (5);
+		write(fd, "(null)", 6);
+		return (6);
 	}
 	while (*s != '\0')
 	{

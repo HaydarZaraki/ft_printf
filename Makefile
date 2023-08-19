@@ -1,4 +1,7 @@
-SRCS =	ft_printf.c ft_print_decimal.c ft_print_char_string.c
+SRCS =	ft_printf.c \
+		ft_print_char_string.c \
+		ft_print_hex.c \
+		ft_itoa.c
 		
 OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a
