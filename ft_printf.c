@@ -6,7 +6,7 @@
 /*   By: helgayli <helgayli@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:00:38 by helgayli          #+#    #+#             */
-/*   Updated: 2023/08/19 14:32:13 by helgayli         ###   ########.fr       */
+/*   Updated: 2023/08/19 21:34:03 by helgayli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	check_operator_x_p(va_list args, char *str)
 		len += ft_putstr_fd("0x", 1);
 		len += ft_print_ptr(va_arg(args, long), 'a');
 	}
-
 	return (len);
 }
 
@@ -86,13 +85,3 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (len);
 }
-
-// int main()
-// {
-// 	int i,j = 0;
-// 	i = ft_printf("%p\n", (void *)6);
-// 	j = printf("%p\n", (void *)6);
-// 	// printf("FT : %d\n", i);
-// 	// printf("Original : %d\n", j);
-// 	return (0);
-// }
